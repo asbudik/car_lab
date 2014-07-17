@@ -8,7 +8,7 @@ function Car(make, model, year) {
   this.previousOwners = [];
   this.currentOwner = "Manufacturer";
   this.passengers = [];
-}
+};
 
 Car.prototype.sale = function(newOwner) {
   this.previousOwners.push(this.currentOwner);
@@ -18,7 +18,7 @@ Car.prototype.sale = function(newOwner) {
 
 Car.prototype.paint = function(newColor) {
     this.paint = newColor;
-}
+};
 
 Car.prototype.start = function() {
   if (this.state === "off") {
@@ -28,7 +28,7 @@ Car.prototype.start = function() {
     this.state = "off";
   }
   return this.state;
-}
+};
 
 Car.prototype.driveTo = function(destination) {
   if (this.state === "on") {
@@ -36,7 +36,7 @@ Car.prototype.driveTo = function(destination) {
   } else {
     console.log('Turn the car on!');
   }
-}
+};
 
 Car.prototype.park = function() {
   if (this.state === "off") {
@@ -44,7 +44,7 @@ Car.prototype.park = function() {
   } else {
     console.log('Turn the car off before parking.');
   }
-}
+};
 
 Car.prototype.pickUp = function(name) {
   if (this.state === "on") {
@@ -53,7 +53,7 @@ Car.prototype.pickUp = function(name) {
   } else {
     console.log("Turn your car on");
   }
-}
+};
 
 Car.prototype.dropOff = function(name) {
   if (this.state === "on") {
@@ -67,6 +67,12 @@ Car.prototype.dropOff = function(name) {
   } else {
     console.log("Turn your car on");
   }
+};
+
+// to get tests working, you need to add class to 'module.exports'
+
+if (module !== undefined && module.exports) {
+  module.exports = Car;
 }
 
 eval(locus);
